@@ -33,7 +33,13 @@
     "HAPROXY_GROUP": "external",
     "HAPROXY_0_VHOST": "DCOS-PublicSlaveLo-11B276BVFPDAM-950869174.us-west-2.elb.amazonaws.com"
   },
-  "healthChecks": null,
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "path": "/pools",
+      "ignoreHttp1xx": false
+    }
+  ],
   "env": {
     "TYPE": "MASTER"
   },
@@ -41,4 +47,3 @@
     "networkName": "dcos"
   }
 }
-
