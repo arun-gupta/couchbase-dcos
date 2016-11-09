@@ -1,0 +1,44 @@
+{
+  "id": "/couchbase-master",
+  "cmd": null,
+  "cpus": 4,
+  "mem": 4096,
+  "disk": 4096,
+  "instances": 1,
+  "executor": null,
+  "fetch": null,
+  "constraints": null,
+  "acceptedResourceRoles": null,
+  "user": null,
+  "container": {
+    "docker": {
+      "image": "arungupta/couchbase:swarm",
+      "forcePullImage": false,
+      "privileged": false,
+      "portMappings": [
+        {
+          "containerPort": 8091,
+          "protocol": "tcp",
+          "name": "admin",
+          "servicePort": 8091,
+          "labels": {
+            "VIP_0": "/couchbase-master:8091"
+          }
+        }
+      ],
+      "network": "USER"
+    }
+  },
+  "labels": {
+    "HAPROXY_GROUP": "external",
+    "HAPROXY_0_VHOST": "DCOS-PublicSlaveLo-11B276BVFPDAM-950869174.us-west-2.elb.amazonaws.com"
+  },
+  "healthChecks": null,
+  "env": {
+    "TYPE": "MASTER"
+  },
+  "ipAddress": {
+    "networkName": "dcos"
+  }
+}
+

@@ -1,0 +1,63 @@
+{
+  "volumes": null,
+  "id": "/couchbase-worker",
+  "cmd": null,
+  "args": null,
+  "user": null,
+  "env": {
+    "TYPE": "WORKER",
+    "COUCHBASE_MASTER": "couchbase-master.marathon.l4lb.thisdcos.directory"
+  },
+  "instances": 1,
+  "cpus": 4,
+  "mem": 4096,
+  "disk": 4096,
+  "gpus": 0,
+  "executor": null,
+  "constraints": null,
+  "fetch": null,
+  "storeUrls": null,
+  "backoffSeconds": 1,
+  "backoffFactor": 1.15,
+  "maxLaunchDelaySeconds": 3600,
+  "container": {
+    "docker": {
+      "image": "arungupta/couchbase:swarm",
+      "forcePullImage": false,
+      "privileged": false,
+      "portMappings": [
+        {
+          "containerPort": 8091,
+          "protocol": "tcp",
+          "name": "admin",
+          "servicePort": 8091,
+          "labels": {
+            "VIP_0": "/couchbase-worker:8091"
+          }
+        }
+      ],
+      "network": "USER"
+    }
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "path": "/pools",
+      "ignoreHttp1xx": false
+    }
+  ],
+  "readinessChecks": null,
+  "dependencies": null,
+  "upgradeStrategy": {
+    "minimumHealthCapacity": 1,
+    "maximumOverCapacity": 1
+  },
+  "labels": null,
+  "acceptedResourceRoles": null,
+  "ipAddress": {
+    "networkName": "dcos"
+  },
+  "residency": null,
+  "secrets": null,
+  "taskKillGracePeriodSeconds": null
+}

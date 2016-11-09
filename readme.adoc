@@ -1,0 +1,15 @@
+= Couchbase Cluster using DC/OS
+
+This repo contains configuration files and instructions to run a Couchbase cluster using DC/OS.
+
+. Start DC/OS CloudFormation tempalte: https://mesosphere.com/amazon/
+. Use `Mesos Master` address, login using OAuth
+. `dcos config set core.dcos_url <MESOS_MASTER_ADDRESS>`
+. `dcos auth login`
+. `dcos install marathon-lb`
+. Create a new service using `couchbase-startup.json`
+. Access Couchbase Web Console at `http://<PUBLIC_SLAVE_ADDRESS>`
+. Create a new worker service using `couchbase-node.json`
+. `sh-add ~/.ssh/arun-couchbase.pem`
+. `dcos node ssh --master-proxy --leader`
+
