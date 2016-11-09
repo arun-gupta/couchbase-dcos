@@ -6,7 +6,7 @@
   "user": null,
   "env": {
     "TYPE": "WORKER",
-    "COUCHBASE_MASTER": "couchbase-master.marathon.l4lb.thisdcos.directory"
+    "COUCHBASE_MASTER": "couchbase-startup.marathon.l4lb.thisdcos.directory"
   },
   "instances": 1,
   "cpus": 4,

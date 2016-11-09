@@ -1,5 +1,5 @@
 {
-  "id": "/couchbase-master",
+  "id": "/couchbase-startup",
   "cmd": null,
   "cpus": 4,
   "mem": 4096,
@@ -22,7 +22,7 @@
           "name": "admin",
           "servicePort": 8091,
           "labels": {
-            "VIP_0": "/couchbase-master:8091"
+            "VIP_0": "/couchbase-startup:8091"
           }
         }
       ],
