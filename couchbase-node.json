@@ -22,7 +22,7 @@
   "maxLaunchDelaySeconds": 3600,
   "container": {
     "docker": {
-      "image": "arungupta/couchbase:swarm",
+      "image": "arungupta/couchbase:dcos",
       "forcePullImage": false,
       "privileged": false,
       "portMappings": [
