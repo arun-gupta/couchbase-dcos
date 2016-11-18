@@ -2,7 +2,7 @@
 
 This repo contains configuration files and instructions to run a Couchbase cluster using DC/OS.
 
-. Start DC/OS CloudFormation tempalte: https://mesosphere.com/amazon/
+. Start DC/OS CloudFormation template: https://mesosphere.com/amazon/. Single Master, any region is fine.
 . Use `Mesos Master` address, login using OAuth
 . `dcos config set core.dcos_url <MESOS_MASTER_ADDRESS>`
 . `dcos auth login`
