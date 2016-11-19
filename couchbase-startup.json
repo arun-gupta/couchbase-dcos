@@ -31,7 +31,7 @@
   },
   "labels": {
     "HAPROXY_GROUP": "external",
-    "HAPROXY_0_VHOST": "DCOS-PublicSlaveLo-11B276BVFPDAM-950869174.us-west-2.elb.amazonaws.com"
+    "HAPROXY_0_VHOST": "DCOS-Couc-PublicSl-1RANNR8GFN0XS-965936795.us-west-1.elb.amazonaws.com"
   },
   "healthChecks": [
     {
