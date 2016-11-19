@@ -7,6 +7,7 @@ This repo contains configuration files and instructions to run a Couchbase clust
 . `dcos config set core.dcos_url http://<MESOS_MASTER_ADDRESS>`
 . `dcos auth login`
 . `dcos package install marathon-lb`
+. Replace the value of `HAPROXY_0_VHOST` in link:couchbase-startup.json[] with the value shown in CloudFormation Outputs tab for `Public slaves`.
 . Create a new service using link:couchbase-startup.json[]
 . Access Couchbase Web Console at `http://<PUBLIC_SLAVE_ADDRESS>`
 . Create a new worker service using link:couchbase-node.json[]
